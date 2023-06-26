@@ -8,7 +8,8 @@ h1 {
 }
 
 div {
-    background-color: aquamarine;
+    background-color: darkblue;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: white;
 }
