@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Aidan Wilson</title>
 </head>
-<header>
-    <div class="top">
-        <h1>Aidan Wilson</h1>
-        <h2>Brisbane, Australia</h2>
-        <p>2nd-year Electrical Engineering and Computer Science Student at Queensland University of Technology.</p>
-    </div>
-    <hr size="5" width="80%" color="black">  
-</header>
-
 <body>
-    <p>
-        Interested technologies:
-        <br></br>
-        <button>C#</button>
-        <button>React.js</button>
-        <button>Javascript</button>
-        <button>SQL</button>
-        <button>Node.js</button>
-        <br></br>
-        Projects:
-        <br></br>
-        <button>Client-Side React Application</button>
-        <button>Chess-like game AI in C#</button>
-        <button>Server-Side Express Application</button>
-    </p>
+<div id="sidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">about me</a>
+  <a href="#">my projects</a>
+  <a href="#">get in touch</a>
+</div>
 
-    <div class="links">
-        <p>My links:</p>
-        <a href="https://www.linkedin.com/in/aidan-w/" class="button">Linkedin</a>
-        <a href="https://github.com/afne" class="button">Github</a>
-        <a href="files/Resume.pdf" class="button">Resume</a>
-        <a href="mailto:aidanjwilson04@gmail.com" class="button">Email</a>
-    </div>
+<h2>Aidan Wilson</h2>
+<p>A 3rd Year Electrical Engineering and Computer Science student at Queensland University of Technology</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "0";
+}
+</script>
+   
 </body>
-
-</html>
+</html> 
