@@ -1,3 +1,7 @@
+html {
+    font-family: Arial, sans-serif;
+  }
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -19,6 +23,7 @@
     color: #818181;
     display: block;
     transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   /* When you mouse over the navigation links, change their color */
@@ -58,4 +63,8 @@
   
   a:hover, a:active {
     background-color: rgb(0, 0, 0);
+  }
+
+  .block1 {
+    text-align: center;
   }
