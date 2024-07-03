@@ -46,7 +46,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 400vh;
+    height: 280vh;
     width: 80px;
     background-color: #12171e;
     padding: .4rem .8rem;
@@ -280,7 +280,6 @@ footer .links a:hover {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: capitalize;
     margin: 0 0 7px;
 }
 
@@ -289,7 +288,6 @@ footer .links a:hover {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: capitalize;
     margin: 0 0 7px;
     text-align: right;
 }
