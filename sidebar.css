@@ -374,3 +374,56 @@ footer .links a:hover {
         float: none;
     }
 }
+
+
+.timeline {
+    width: 80%;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+    pointer-events: none;
+}
+
+.timeline rect {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline rect:hover {
+    opacity: 0.8;
+}
+
+.timeline .legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timeline .legend div {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline .legend div span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.legend .work span {
+    background-color: red;
+}
+
+.legend .education span {
+    background-color: orange;
+}

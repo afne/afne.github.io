@@ -60,6 +60,108 @@
             <h1>Aidan Wilson's Portfolio</h1>
             <h2>A 3rd Year Electrical Engineering and Computer Science student at Queensland University of Technology, currently interning at Kitney as part of the Toolkit team.</h2>
         </div>
+        <br>
+        <h3>Interactive Education and Work History Timeline</h3>
+        <br>
+        <div class="timeline">
+            <svg width="600" height="300" style="background-color: #4e4848;">
+
+                <text x="58" y="40" font-size="23" fill="white">Interactive Education and Work History Timeline</text>
+                <!-- Grid Lines -->
+                <line x1="50" y1="200" x2="550" y2="200" stroke="gray" stroke-width="2" />
+                <line x1="50" y1="170" x2="550" y2="170" stroke="gray" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="140" x2="550" y2="140" stroke="gray" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="110" x2="550" y2="110" stroke="gray" stroke-width="1" stroke-dasharray="5,5" />
+                <line x1="50" y1="80" x2="550" y2="80" stroke="gray" stroke-width="1" stroke-dasharray="5,5" />
+        
+                <!-- Vertical Year Lines -->
+                <line x1="50" y1="60" x2="50" y2="250" stroke="gray" stroke-width="1" />
+                <line x1="150" y1="60" x2="150" y2="250" stroke="gray" stroke-width="1" />
+                <line x1="250" y1="60" x2="250" y2="250" stroke="gray" stroke-width="1" />
+                <line x1="350" y1="60" x2="350" y2="250" stroke="gray" stroke-width="1" />
+                <line x1="450" y1="60" x2="450" y2="250" stroke="gray" stroke-width="1" />
+                <line x1="550" y1="60" x2="550" y2="250" stroke="gray" stroke-width="1" />
+        
+                <!-- Timeline Line -->
+                <line x1="50" y1="200" x2="550" y2="200" stroke="gray" stroke-width="2" />
+        
+                <!-- Year Labels -->
+                <text x="35" y="270" font-size="14" fill="white">2020</text>
+                <text x="135" y="270" font-size="14" fill="white">2021</text>
+                <text x="235" y="270" font-size="14" fill="white">2022</text>
+                <text x="335" y="270" font-size="14" fill="white">2023</text>
+                <text x="435" y="270" font-size="14" fill="white">2024</text>
+                <text x="535" y="270" font-size="14" fill="white">2025</text>
+        
+                <!-- Work/Education Bars -->
+                <!-- Education Below the Line -->
+                <rect x="50" y="205" width="190" height="40" fill="#2C73B9" data-title="Mansfield State High School" data-description="2016 - 2021 | QCE and ATAR" />
+                <rect x="260" y="205" width="290" height="40" fill="#012A4C" data-title="Queensland University of Technology" data-description="2022 - 2026 | Bachelor of Engineering (Electrical) / Information Technology (Computer Science)" />
+        
+                <!-- Work Above the Line -->
+                <rect x="250" y="155" width="230" height="40" fill="#51247A" data-title="University of Queensland Customs House" data-description="Feb 2022 - Apr 2024 | Food and Beverage Attendant" />
+                <rect x="350" y="110" width="200" height="40" fill="grey" data-title="Sky and Lotus Rooftop Lounge and Nightclub" data-description="Jan 2023 - Present | Venue Manager" />
+                <rect x="300" y="65" width="250" height="40" fill="#AF8B10" data-title="Sofitel Brisbane Central" data-description="Aug 2022 - Present | Food and Beverage Attendant" />
+                <rect x="500" y="155" width="50" height="40" fill="#8CBE2E" data-title="Kitney Toolkit" data-description="Jun 2024 - Present | SWIP Intern" />
+
+                <!-- Logo images -->
+                <image x="205" y="210" height="30" width="30" href="images/mshs.png" data-title="Mansfield State High School" data-description="2016 - 2021 | QCE and ATAR" />
+                <image x="510" y="210" height="30" width="30" href="images/qut.jpg" data-title="Queensland University of Technology" data-description="2022 - 2026 | Bachelor of Engineering (Electrical) / Information Technology (Computer Science)" />
+                <image x="440" y="160" height="30" width="30" href="images/customs.png" data-title="University of Queensland Customs House" data-description="Feb 2022 - Apr 2024 | Food and Beverage Attendant"/>
+                <image x="510" y="115" height="30" width="30" href="images/sky.png" data-title="Sky and Lotus Rooftop Lounge and Nightclub" data-description="Jan 2023 - Present | Venue Manager" />
+                <image x="510" y="70" height="30" width="30" href="images/sofi.jpg" data-title="Sofitel Brisbane Central" data-description="Aug 2022 - Present | Food and Beverage Attendant"  />
+                <image x="510" y="160" height="30" width="30" href="images/kitney.jpeg" data-title="Kitney Toolkit" data-description="Jun 2024 - Present | SWIP Intern"  />
+            </svg>
+        
+        </div>
+        
+        <div class="tooltip" id="tooltip"></div>
+        
+        <script>
+            document.querySelectorAll('.timeline rect').forEach(function (rect) {
+                rect.addEventListener('mouseover', function (event) {
+                    const title = event.target.getAttribute('data-title');
+                    const description = event.target.getAttribute('data-description');
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.innerHTML = `<strong>${title}</strong><br>${description}`;
+                    tooltip.style.left = event.pageX + 10 + 'px';
+                    tooltip.style.top = event.pageY + 10 + 'px';
+                    tooltip.style.display = 'block';
+                });
+        
+                rect.addEventListener('mouseout', function () {
+                    document.getElementById('tooltip').style.display = 'none';
+                });
+        
+                rect.addEventListener('mousemove', function (event) {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.left = event.pageX + 10 + 'px';
+                    tooltip.style.top = event.pageY + 10 + 'px';
+                });
+            });
+            document.querySelectorAll('.timeline image').forEach(function (rect) {
+                rect.addEventListener('mouseover', function (event) {
+                    const title = event.target.getAttribute('data-title');
+                    const description = event.target.getAttribute('data-description');
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.innerHTML = `<strong>${title}</strong><br>${description}`;
+                    tooltip.style.left = event.pageX + 10 + 'px';
+                    tooltip.style.top = event.pageY + 10 + 'px';
+                    tooltip.style.display = 'block';
+                });
+        
+                rect.addEventListener('mouseout', function () {
+                    document.getElementById('tooltip').style.display = 'none';
+                });
+        
+                rect.addEventListener('mousemove', function (event) {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.left = event.pageX + 10 + 'px';
+                    tooltip.style.top = event.pageY + 10 + 'px';
+                });
+            });
+        </script>
+        
     </div>
     <footer>
         <div class="links">
