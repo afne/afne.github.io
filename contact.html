@@ -6,73 +6,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Aidan Wilson</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="sidebar.css">
+    <style>
+        .contact-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        }
+
+        .contact-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-link i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-link span {
+            font-weight: 500;
+        }
+
+        .availability {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .availability p {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class='bx bx-laugh'></i>
-                <span>Aidan Wilson</span>
-            </div>
-        </div>
-        <i class="bx bx-menu" id='btn'></i>
-        <div class="user">
-            <img src="images/user-img.png" alt="me" class="user-img">
-            <div>
-                <p class="bold">Welcome to my site!</p>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <a href="index.html">
-                    <i class='bx bxs-face'></i>
-                    <span class="nav-item">about me</span>
-                </a>
-                <span class="tooltip">about me</span>
-            </li>
-            <li>
-                <a href="projects.html">
-                    <i class='bx bx-code-block'></i>
-                    <span class="nav-item">my projects</span>
-                </a>
-                <span class="tooltip">my projects</span>
-            </li>
-            <li>
-                <a href="experience.html">
-                    <i class='bx bxs-briefcase'></i>
-                    <span class="nav-item">my experience</span>
-                </a>
-                <span class="tooltip">my experience</span>
-            </li>
-            <li>
-                <a href="contact.html">
-                    <i class='bx bxs-contact'></i>
-                    <span class="nav-item">get in touch</span>
-                </a>
-                <span class="tooltip">get in touch</span>
-            </li>
-        </ul>
-    </div>
+    <!-- Sidebar placeholder -->
+    <div id="sidebar-placeholder"></div>
+
     <div class="main-content">
-        <div class="container">
+        <section class="contact-header">
             <h1>Get in Touch</h1>
-            <p>Details on how to contact Aidan Wilson...</p>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Connect With Me</h3>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/aidan-w/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-linkedin-square'></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/afne" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-github'></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:aidanjwilson04@gmail.com" class="contact-link">
+                            <i class='bx bxs-envelope'></i>
+                            <span>aidanjwilson04@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Quick Info</h3>
+                    <div class="contact-links">
+                        <a href="files/Resume.pdf" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxs-file-pdf'></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                    <div class="availability">
+                        <p><strong>Location:</strong> Brisbane, Australia</p>
+                        <p><strong>Status:</strong> Available for Internships</p>
+                        <p><strong>Response Time:</strong> Within 24 hours</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
     <footer>
         <div class="links">
-            <p>My links:</p>
-            <a href="https://www.linkedin.com/in/aidan-w/">
+            <p>Connect with me:</p>
+            <a href="https://www.linkedin.com/in/aidan-w/" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxl-linkedin-square'></i>
                 <span class="nav-item">LinkedIn</span>
             </a>
-            <a href="https://github.com/afne">
+            <a href="https://github.com/afne" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxl-github'></i>
                 <span class="nav-item">GitHub</span>
             </a>
-            <a href="files/Resume.pdf">
+            <a href="files/Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxs-file-pdf'></i>
                 <span class="nav-item">Resume</span>
             </a>
@@ -82,14 +267,44 @@
             </a>
         </div>
     </footer>
+
+    <!-- Load sidebar component -->
+    <script src="js/sidebar.js"></script>
+
+    <script>
+        // Form submission handling
+        const form = document.getElementById('contactForm');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                alert('Failed to send message. Please try again later.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
 </body>
-
-<script>
-    let btn = document.querySelector('#btn')
-    let sidebar = document.querySelector('.sidebar')
-
-    btn.onclick = function () {
-        sidebar.classList.toggle('active');
-    };
-</script>
 </html>

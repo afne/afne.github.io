@@ -6,73 +6,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Aidan Wilson</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="sidebar.css">
+    <style>
+        .projects-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        }
+
+        .projects-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .projects-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-description {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .project-link i {
+            font-size: 1.25rem;
+        }
+
+        .featured-project {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(30, 64, 175, 0.05) 100%);
+        }
+
+        .featured-project .project-image {
+            height: 100%;
+            min-height: 300px;
+        }
+
+        .featured-project .project-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-project .project-image {
+                min-height: 200px;
+            }
+
+            .projects-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class='bx bx-laugh'></i>
-                <span>Aidan Wilson</span>
-            </div>
-        </div>
-        <i class="bx bx-menu" id='btn'></i>
-        <div class="user">
-            <img src="images/user-img.png" alt="me" class="user-img">
-            <div>
-                <p class="bold">Welcome to my site!</p>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <a href="index.html">
-                    <i class='bx bxs-face'></i>
-                    <span class="nav-item">about me</span>
-                </a>
-                <span class="tooltip">about me</span>
-            </li>
-            <li>
-                <a href="projects.html">
-                    <i class='bx bx-code-block'></i>
-                    <span class="nav-item">my projects</span>
-                </a>
-                <span class="tooltip">my projects</span>
-            </li>
-            <li>
-                <a href="experience.html">
-                    <i class='bx bxs-briefcase'></i>
-                    <span class="nav-item">my experience</span>
-                </a>
-                <span class="tooltip">my experience</span>
-            </li>
-            <li>
-                <a href="contact.html">
-                    <i class='bx bxs-contact'></i>
-                    <span class="nav-item">get in touch</span>
-                </a>
-                <span class="tooltip">get in touch</span>
-            </li>
-        </ul>
-    </div>
+    <!-- Sidebar placeholder -->
+    <div id="sidebar-placeholder"></div>
+
     <div class="main-content">
-        <div class="container">
+        <section class="projects-header">
             <h1>My Projects</h1>
-            <p>Details about Aidan Wilson's projects...</p>
+            <p>Exploring the intersection of electrical engineering and computer science through innovative projects</p>
+        </section>
+
+        <div class="projects-grid">
+            <!-- Featured Project -->
+            <article class="project-card featured-project">
+                <img src="images/portfolio.jpg" alt="Portfolio Website" class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <h2 class="project-title">Personal Portfolio Website</h2>
+                    <p class="project-description">
+                        A modern, responsive portfolio website showcasing my skills and experience. Built with clean, semantic HTML and modern CSS features. Features a dynamic sidebar, smooth animations, and a timeline of my education and work history.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/afne/afne.github.io" class="project-link" target="_blank">
+                            <i class='bx bxl-github'></i>
+                            View Code
+                        </a>
+                        <a href="https://afne.github.io" class="project-link" target="_blank">
+                            <i class='bx bx-link-external'></i>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 1 -->
+            <article class="project-card">
+                <img src="images/embedded.jpg" alt="Embedded Systems Project" class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Embedded Systems</span>
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">Arduino</span>
+                    </div>
+                    <h2 class="project-title">Smart Home Automation System</h2>
+                    <p class="project-description">
+                        Developed a home automation system using Arduino and various sensors. Implemented real-time monitoring and control of home devices through a web interface.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class='bx bxl-github'></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="project-card">
+                <img src="images/circuit.jpg" alt="Circuit Design Project" class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Circuit Design</span>
+                        <span class="project-tag">PCB Design</span>
+                        <span class="project-tag">Altium</span>
+                    </div>
+                    <h2 class="project-title">Custom PCB Design</h2>
+                    <p class="project-description">
+                        Designed and fabricated a custom PCB for a power management system. Utilized Altium Designer for schematic capture and PCB layout.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class='bx bxl-github'></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="project-card">
+                <img src="images/python.jpg" alt="Python Project" class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Data Analysis</span>
+                        <span class="project-tag">Machine Learning</span>
+                    </div>
+                    <h2 class="project-title">Data Analysis Tool</h2>
+                    <p class="project-description">
+                        Created a Python-based tool for analyzing and visualizing electrical system data. Implemented machine learning algorithms for predictive maintenance.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class='bx bxl-github'></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
+
     <footer>
         <div class="links">
-            <p>My links:</p>
-            <a href="https://www.linkedin.com/in/aidan-w/">
+            <p>Connect with me:</p>
+            <a href="https://www.linkedin.com/in/aidan-w/" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxl-linkedin-square'></i>
                 <span class="nav-item">LinkedIn</span>
             </a>
-            <a href="https://github.com/afne">
+            <a href="https://github.com/afne" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxl-github'></i>
                 <span class="nav-item">GitHub</span>
             </a>
-            <a href="files/Resume.pdf">
+            <a href="files/Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <i class='bx bxs-file-pdf'></i>
                 <span class="nav-item">Resume</span>
             </a>
@@ -82,14 +279,31 @@
             </a>
         </div>
     </footer>
+
+    <!-- Load sidebar component -->
+    <script src="js/sidebar.js"></script>
+
+    <script>
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
-
-<script>
-    let btn = document.querySelector('#btn')
-    let sidebar = document.querySelector('.sidebar')
-
-    btn.onclick = function () {
-        sidebar.classList.toggle('active');
-    };
-</script>
 </html>
